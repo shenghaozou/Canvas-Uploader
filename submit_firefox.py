@@ -43,7 +43,7 @@ def student_submit(drv, assignment, sid, points, comments):
         pts[i].clear()
         pts[i].send_keys(str(x))
         i = i + 1
-    total_grade.send_keys(str(sum(points)))
+
     comment_delete = drv.find_elements_by_css_selector(DELETE_ASSIGNMENT_SELECTOR)
     if DELETE_COMMENT:
         for deletes in comment_delete:
@@ -60,6 +60,7 @@ def student_submit(drv, assignment, sid, points, comments):
     #print 'comfirm'
     #a = raw_input()
     save.click()
+    total_grade.send_keys(str(sum(points)))
     submit.click()
     # time.sleep(1)
 
