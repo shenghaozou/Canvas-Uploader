@@ -35,6 +35,7 @@ def student_submit(drv, assignment, sid, points, comments):
     # view_rubric = drv.find_element_by_css_selector(VIEW_RUBRIC_SELECTOR)
     comment = drv.find_element_by_id(COMMENT_ID)
     submit = drv.find_element_by_id(SUBMIT_ID)
+    total_grade = drv.find_element_by_id(TOTAL_GRADE_SELECTOR)
     view_rubric.click()
     save = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, SAVE_SELECTOR)))
     i = 0
@@ -42,6 +43,7 @@ def student_submit(drv, assignment, sid, points, comments):
         pts[i].clear()
         pts[i].send_keys(str(x))
         i = i + 1
+    total_grade.send_keys(str(sum(points)))
     comment_delete = drv.find_elements_by_css_selector(DELETE_ASSIGNMENT_SELECTOR)
     if DELETE_COMMENT:
         for deletes in comment_delete:
@@ -52,7 +54,7 @@ def student_submit(drv, assignment, sid, points, comments):
                 wait.until(EC.alert_is_present())
                 alert = drv.switch_to.alert
                 alert.accept()
-        
+
     if comments != None:
         comment.send_keys(comments)
     #print 'comfirm'
@@ -90,6 +92,7 @@ COMMENT_ID = 'speedgrader_comment_textarea'
 SUBMIT_ID = 'comment_submit_button'
 SAVE_SELECTOR = '.save_rubric_button.Button.Button--primary'
 DELETE_ASSIGNMENT_SELECTOR = '.comment'
+TOTAL_GRADE_SELECTOR = 'grading-box-extended'
 first_rubric = 1
 
 wait = WebDriverWait(driver, 45)
@@ -130,10 +133,3 @@ while True:
     student_submit(driver, assignment, str(sid), points, comments)
 
 driver.quit()
-    
-
-
-
-
-
-
