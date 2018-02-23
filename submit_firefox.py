@@ -60,6 +60,7 @@ def student_submit(drv, assignment, sid, points, comments):
     #print 'comfirm'
     #a = raw_input()
     save.click()
+    total_grade.clear()
     total_grade.send_keys(str(sum(points)))
     submit.click()
     # time.sleep(1)
