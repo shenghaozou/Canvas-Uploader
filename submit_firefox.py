@@ -18,6 +18,7 @@ YOUR_CANVAS_NAME = 'Frank'
 COURSE_CODE = '91385'
 CANVAS_HOME_PAGE = "https://canvas.wisc.edu"
 DELETE_COMMENT = 1
+USER_NAME = 'szou28' # Please change it to your own user name.
 
 def student_submit(drv, assignment, sid, points, comments):
     global wait
@@ -65,7 +66,7 @@ def student_submit(drv, assignment, sid, points, comments):
     submit.click()
     # time.sleep(1)
 
-USER_NAME = 'szou28' # Please change it to your own user name.
+
 
 print 'USER:',USER_NAME
 print 'Please enter the password:'
