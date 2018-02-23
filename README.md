@@ -20,6 +20,7 @@ There are several things you should change before running this script:
 2. **COURSE_CODE** variable: change to your course code. Open your Canvas course homepage. For example, the URL will be:*https://canvas.wisc.edu/courses/91385*. Here, 91385 is the course number.
 3. **YOUR_CANVAS_NAME** variable: Your first name on Canvas.
 4. **DELETE_COMMENT** variable: By default delete comment feature will be on. It will delete repeated comments written by you. Sometimes, the script fails and it can help you to avoid multiple same comments. If you don't need this feature, please set this variable to 0.
+5. **USER_NAME** variable: Change it to your Canvas user name.
 
 ## Excel File Format
 Please take a look of my *example.xlsx* file for more information. The script needs Student ID for matching. To get that, you can export a csv file from Canvas Grade page and you can find SID there.
